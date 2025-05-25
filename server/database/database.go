@@ -9,6 +9,8 @@ import (
 	"gorm.io/gorm/logger"
 )
 
+const DefaultImageURL = "https://via.placeholder.com/150"
+
 var DB *gorm.DB
 
 func InitDB() {
@@ -34,9 +36,9 @@ func InitDB() {
 
 	if productCount == 0 {
 		products := []models.Product{
-			{Name: "Laptop", Description: "High-performance laptop", Price: 1299.99, ImageURL: "https://via.placeholder.com/150"},
-			{Name: "Smartphone", Description: "Latest smartphone model", Price: 799.99, ImageURL: "https://via.placeholder.com/150"},
-			{Name: "Headphones", Description: "Noise-canceling headphones", Price: 199.99, ImageURL: "https://via.placeholder.com/150"},
+			{Name: "Laptop", Description: "High-performance laptop", Price: 1299.99, ImageURL: DefaultImageURL},
+			{Name: "Smartphone", Description: "Latest smartphone model", Price: 799.99, ImageURL: DefaultImageURL},
+			{Name: "Headphones", Description: "Noise-canceling headphones", Price: 199.99, ImageURL: DefaultImageURL},
 		}
 
 		for _, product := range products {
